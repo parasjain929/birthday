@@ -214,7 +214,7 @@ background-color: #111111;
   font-weight: 800;
   font-size: 2em;
   text-transform: uppercase;
-  letter-spacing: 0em;
+  letter-spacing: 0.5em;
   overflow: hidden;
   margin-left: 33%;
 }
