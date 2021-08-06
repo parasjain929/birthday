@@ -1,0 +1,225 @@
+body {
+  margin: 0;
+  background-color:#FDEFEF;
+
+}
+
+
+#main{
+overflow: hidden;
+  background-image: url('https://cdn.dribbble.com/users/2631261/screenshots/13926004/media/7e4be6f4c1ca9f8c598e425e0d35bf73.gif');
+  background-repeat: no-repeat;
+  background-size: auto;
+}
+
+#wish{
+height: 100vh;
+  padding: 1em;
+background-color: #111111;
+  box-sizing: border-box;
+  display: flex;
+  flex-wrap: wrap;
+  overflow: hidden;
+}
+
+#balloon-container {
+  height: 100vh;
+  padding: 1em;
+  box-sizing: border-box;
+  display: flex;
+  flex-wrap: wrap;
+  overflow: hidden;
+}
+
+#carddiv{
+    height: 100%;
+    background: #f5f3f2;
+    background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+    background-image: url('bg2.png');
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Oxygen-Sans,Ubuntu,Cantarell,"Helvetica Neue",sans-serif;
+}
+
+.balloon {
+  height: 125px;
+  width: 105px;
+  border-radius: 75% 75% 70% 70%;
+  position: relative;
+  z-index: 2;
+}
+
+.balloon:before {
+  content: "";
+  height: 75px;
+  width: 1px;
+  padding: 1px;
+  background-color: #FDFD96;
+  display: block;
+  position: absolute;
+  top: 125px;
+  left: 0;
+  right: 0;
+  margin: auto;
+}
+
+.balloon:after {
+    content: "▲";
+    text-align: center;
+    display: block;
+    position: absolute;
+    color: inherit;
+    top: 120px;
+    left: 0;
+    right: 0;
+    margin: auto;
+}
+
+@keyframes float {
+  from {transform: translateY(100vh);
+  opacity: 1;}
+  to {transform: translateY(-300vh);
+  opacity: 0;}
+  
+  
+}
+
+ .head {
+	 font-family: 'CoreCircus', sans-serif;
+	 text-transform: uppercase;
+	 font-size: 4rem ;
+	 text-align: center;
+	 line-height: 1;
+	 margin: 0;
+	 top: 16%;
+	 left: 50%;
+	 transform: translate(-50%, -50%);
+	 position: absolute;
+	 color: #fc3b65;
+	 text-shadow: -1px -1px 0 #6e1f58, 1px -1px 0 #6e1f58, -1px 1px 0 #6e1f58, 1px 1px 0 #6e1f58, 1px 0px 0px #65f283, 0px 1px 0px #65f283, 2px 1px 0px #65f283, 1px 2px 0px #65f283, 3px 2px 0px #65f283, 2px 3px 0px #65f283, 4px 3px 0px #65f283, 3px 4px 0px #65f283, 5px 4px 0px #65f283, 3px 5px 0px #6e1f58, 6px 5px 0px #6e1f58, -1px 2px 0 black, 0 3px 0 #6e1f58, 1px 4px 0 #6e1f58, 2px 5px 0px #6e1f58, 2px -1px 0 #6e1f58, 3px 0 0 #6e1f58, 4px 1px 0 #6e1f58, 5px 2px 0px #6e1f58, 6px 3px 0 #6e1f58, 7px 4px 0 #6e1f58, 10px 10px 4px #dac249;
+}
+ .head:after, .head:before {
+	 content: attr(data-heading);
+	 position: absolute;
+	 overflow: hidden;
+	 left: 0;
+	 width: 100%;
+	 top: 0;
+	 z-index: 5;
+}
+ .head:before {
+	 text-shadow:  -1px -1px 0 #9e132c, 1px -1px 0 #9e132c, -1px 1px 0 #9e132c, 1px 1px 0 #9e132c, 1px 0px 0px #f5b10b, 0px 1px 0px #f5b10b, 2px 1px 0px #f5b10b, 1px 2px 0px #f5b10b, 3px 2px 0px #f5b10b, 2px 3px 0px #f5b10b, 4px 3px 0px #f5b10b, 3px 4px 0px #f5b10b, 5px 4px 0px #f5b10b, 3px 5px 0px #9e132c, 6px 5px 0px #9e132c, -1px 2px 0 black, 0 3px 0 #9e132c, 1px 4px 0 #9e132c, 2px 5px 0px #9e132c, 2px -1px 0 #9e132c, 3px 0 0 #2f3e9c, 4px 1px 0 #9e132c, 5px 2px 0px #9e132c, 6px 3px 0 #9e132c, 7px 4px 0 #9e132c, 10px 10px 4px rgba(106, 241, 119, .8);
+	 color: #65f283;
+	 height: 66%;
+}
+ .head:after {
+	 height: 33%;
+	 color: #4ad9db;
+	 text-shadow: -1px -1px 0 #2f3e9c, 1px -1px 0 #2f3e9c, -1px 1px 0 #2f3e9c, 1px 1px 0 #2f3e9c, 1px 0px 0px #f98ca4, 0px 1px 0px #f98ca4, 2px 1px 0px #f98ca4, 1px 2px 0px #f98ca4, 3px 2px 0px #f98ca4, 2px 3px 0px #f98ca4, 4px 3px 0px #f98ca4, 3px 4px 0px #f98ca4, 5px 4px 0px #f98ca4, 3px 5px 0px #2f3e9c, 6px 5px 0px #2f3e9c, -1px 2px 0 black, 0 3px 0 #2f3e9c, 1px 4px 0 #2f3e9c, 2px 5px 0px #2f3e9c, 2px -1px 0 #2f3e9c, 3px 0 0 #2f3e9c, 4px 1px 0 #2f3e9c, 5px 2px 0px #2f3e9c, 6px 3px 0 #2f3e9c, 7px 4px 0 #2f3e9c;
+}
+/* * Webfont: CoreCircus by S-Core * URL: http://www.myfonts.com/fonts/s-core/core-circus/regular/ * Copyright: Copyright (c) 2013 by S-Core Co., Ltd.. All rights reserved. * Licensed pageviews: 10,000 * * Webfont: CoreCircus2DDot1 by S-Core * URL: http://www.myfonts.com/fonts/s-core/core-circus/dot1/ * Copyright: Copyright (c) 2013 by S-Core Co., Ltd.. All rights reserved. * Licensed pageviews: 10,000 */
+ @font-face {
+	 font-family: 'CoreCircus2DDot1';
+	 src: url('https://s3-us-west-2.amazonaws.com/s.cdpn.io/209981/333BF4_1_0.eot');
+	 src: url('https://s3-us-west-2.amazonaws.com/s.cdpn.io/209981/333BF4_1_0.eot?#iefix') format('embedded-opentype'), url('https://s3-us-west-2.amazonaws.com/s.cdpn.io/209981/333BF4_1_0.woff2') format('woff2'), url('https://s3-us-west-2.amazonaws.com/s.cdpn.io/209981/333BF4_1_0.woff') format('woff'), url('https://s3-us-west-2.amazonaws.com/s.cdpn.io/209981/333BF4_1_0.ttf') format('truetype');
+}
+ @font-face {
+	 font-family: 'CoreCircus';
+	 src: url('https://s3-us-west-2.amazonaws.com/s.cdpn.io/209981/333BF4_8_0.eot');
+	 src: url('https://s3-us-west-2.amazonaws.com/s.cdpn.io/209981/333BF4_8_0.eot?#iefix') format('embedded-opentype'), url('https://s3-us-west-2.amazonaws.com/s.cdpn.io/209981/333BF4_8_0.woff2') format('woff2'), url('https://s3-us-west-2.amazonaws.com/s.cdpn.io/209981/333BF4_8_0.woff') format('woff'), url('https://s3-us-west-2.amazonaws.com/s.cdpn.io/209981/333BF4_8_0.ttf') format('truetype');
+}
+ @font-face {
+	 font-family: 'CoreCircusPierrot4';
+	 src: url('https://s3-us-west-2.amazonaws.com/s.cdpn.io/209981/333BF4_13_0.eot');
+	 src: url('https://s3-us-west-2.amazonaws.com/s.cdpn.io/209981/333BF4_13_0.eot?#iefix') format('embedded-opentype'), url('https://s3-us-west-2.amazonaws.com/s.cdpn.io/209981/333BF4_13_0.woff2') format('woff2'), url('https://s3-us-west-2.amazonaws.com/s.cdpn.io/209981/333BF4_13_0.woff') format('woff'), url('https://s3-us-west-2.amazonaws.com/s.cdpn.io/209981/333BF4_13_0.ttf') format('truetype');
+}
+ 
+ .wrap {
+	 height: 100%;
+}
+ .card {
+	 display: flex;
+	 flex: 0 0 auto;
+	 background: #fff;
+	 max-width: 900px;
+	 margin: 80px 0;
+	 border-radius: 5px;
+	 box-shadow: 0 0px 30px rgba(0, 0, 0, 0.22), 0 1px 2px rgba(0, 0, 0, 0.24);
+}
+ .card-pic-wrap {
+	 border-radius: 5px 0 0 5px;
+	 width: 500px;
+	 flex: 0 0 auto;
+	 position: relative;
+     background-position: center;
+     background-size: cover;
+}
+ .card-content {
+	 padding: 3em 4em 2em;
+}
+ h3 {
+	 font-family: 'PT Serif', serif;
+	 font-weight: bold;
+	 font-size: 2.5em;
+	 margin: 0 0 1em;
+}
+ a {
+	 /* background: #8dc26f; */
+	 color: #fff;
+	 padding: 0 25px;
+	 height: 50px;
+	 font-size: 0.8em;
+	 letter-spacing: 1px;
+	 line-height: 50px;
+	 display: inline-block;
+	 border-radius: 25px;
+	 text-decoration: none;
+	 margin-top: 1.5em;
+	 text-transform: uppercase;
+	 border: 1px solid rgba(0, 0, 0, 0.1);
+}
+ @media (max-width: 790px) {
+	 body {
+		 overflow-x: hidden;
+	}
+	 .wrap {
+		 margin-left: 20px;
+		 margin-right: 20px;
+	}
+	 .card {
+		 flex-direction: column;
+		 margin-top: 50px;
+		 margin-bottom: 50px;
+	}
+	 .card-pic-wrap {
+		 width: 100%;
+		 border-radius: 5px 5px 0 0;
+	}
+	 .card-pic-wrap img {
+		 bottom: 20px;
+		 position: relative;
+	}
+	 .card-content {
+		 padding: 2em 2em 1em;
+	}
+}
+
+.ml16 {
+  color: #402d2d;
+  padding: 40px 0;
+  font-weight: 800;
+  font-size: 2em;
+  text-transform: uppercase;
+  letter-spacing: 0.5em;
+  overflow: hidden;
+  margin-left: 33%;
+}
+
+.ml16 .letter {
+  display: inline-block;
+  line-height: 1em;
+}

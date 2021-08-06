@@ -1,86 +1,134 @@
 
-
-
-
-<!doctype html>
-
-<html lang="en">
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+<title></title>
 
-  <title>Happy Birthday Jhansi Ki Rani</title>
-  <meta name="description" content="A simple HTML5 Template for new projects.">
-  <meta name="author" content="SitePoint">
-
-  <meta property="og:title" content="A Basic HTML5 Template">
-  <meta property="og:type" content="website">
-  <meta property="og:url" content="https://www.sitepoint.com/a-basic-html5-template/">
-  <meta property="og:description" content="A simple HTML5 Template for new projects.">
-  <meta property="og:image" content="image.png">
-
-  <link rel="icon" href="/favicon.ico">
-  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
-  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
-<link href='https://fonts.googleapis.com/css?family=Arvo:700' rel='stylesheet' type='text/css'>
-<link href='https://fonts.googleapis.com/css?family=Raleway:300,100' rel='stylesheet' type='text/css'>
-  <link rel="stylesheet" href="styles.css">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 </head>
 
+<style>
+
+body {
+
+	background-image: url('grunge_patterns.jpg');
+	background-attachment: fixed;
+	color: #333;
+}
+
+.box {
+	border-radius: 3px;
+	background: rgba(101, 101, 101, 0.7); margin: auto; padding: 12px;
+}
+
+.lightbox {
+	zoom: 1.5;
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background: rgba(10, 10, 10, 0.8);
+	text-align: center;
+	margin: auto;
+
+}
+
+div.horizontal {
+	display: flex;
+	justify-content: center;
+	height: 100%;
+}
+
+div.vertical {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	width: 100%;
+}
+
+::-webkit-input-placeholder {
+   color: #955;
+   text-align: center;
+}
+
+::-moz-placeholder {
+   color: #955;
+   text-align: center;
+}
+
+:-ms-input-placeholder {
+   color: #955;
+   text-align: center;
+}
+
+</style>
+
 <body>
-  <!-- your content here... -->
 
-  <div id="main">
-<div id="balloon-container">
-    
-</div>
+	<div id="loginbox" class="lightbox" >
+		<div class="horizontal">
+			<div class="vertical">
+				<div class="box">
+					<input style="margin: 16px; text-align: center;" id="password" type="password" placeholder="password" /> <br />
+					<button id="loginbutton" type="button">Enter</button>
+					<p id="wrongPassword" style="display: none">wrong password</p>
+				</div>
+			</div>
+		</div>
+	</div>
 
-  </div>
-  <div id="wish">
-    <div><canvas id=c></canvas></div>
-  </div>
 
-  <div id="carddiv">
 
-    <!-- inspiration: https://dribbble.com/shots/3784003-Plant-description-page -->
-<div class="wrap">
-  <div class="card">
-     
-    <div class="card-pic-wrap" style="background-image: url('13.jpg')"  >
-    </div>
-    <div class="card-content">
-      <p>To the one who has been through the highs and lows </br></br> To the one who has seen all my phases </br></br> To the one who has to bear with me creating a mess and adding problems in her life.  😄</p>
-    </div>
-  </div>
-  <div class="card">
-    <div class="card-pic-wrap" style="background-image: url('2.jpg')" >
-    </div>
-    <div class="card-content">
-      <p>I Know we fight a lot but somehow as water finds its way, we do too.</br><br> I believe in this effortless way of expressing affection and care for each other.😍</p>
-    </div>
-  </div>
+	<script type="text/javascript" src="https://code.jquery.com/jquery-1.12.0.min.js"></script>
 
-  <div class="card">
-    <div class="card-pic-wrap" style="background-image: url('3.jpg')" >
-    </div>
-    <div class="card-content">
-      <p> <b>Hope everytime we pick it up from we left off.</b></br></br> To the person who's presence is always cherished and the one who makes me exuberant.</br></br> I'd just say, always ❤️ </p>
-    </div>
-  </div>
-</div>
-  </div>
 
-  <div class="footer">
-      <h1 class="ml16">Made with love ❤️</h1>
+	 <script type="text/javascript" src="https://rawcdn.githack.com/chrisveness/crypto/7067ee62f18c76dd4a9d372a00e647205460b62b/sha1.js"></script>
 
-  </span>
-</h1>
+	<script type="text/javascript">
+	"use strict";
 
-  </div>
 
-<script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/2.0.2/anime.min.js"></script>
-<script src="https://code.jquery.com/jquery-1.12.3.js" integrity="sha256-1XMpEtA4eKXNNpXcJ1pmMPs8JV+nwLdEqwiJeCQEkyc=" crossorigin="anonymous"></script>
-  <script src="script.js"></script>
+	function loadPage(pwd) {
+
+		var hash= pwd;
+		hash= Sha1.hash(pwd);
+		var url= hash + "/index.html";
+
+		$.ajax({
+			url : url,
+			dataType : "html",
+			success : function(data) {
+
+				window.location= url;
+
+			},
+			error : function(xhr, ajaxOptions, thrownError) {
+
+
+				parent.location.hash= hash;
+
+				//$("#wrongPassword").show();
+				$("#password").attr("placeholder","wrong password");
+				$("#password").val("");
+			}
+		});
+	}
+
+
+	$("#loginbutton").on("click", function() {
+		loadPage($("#password").val());
+	});
+	$("#password").keypress(function(e) {
+		if (e.which == 13) {
+
+			loadPage($("#password").val());
+		}
+	});
+	$("#password").focus();
+
+	</script>
+
 </body>
 </html>
