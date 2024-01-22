@@ -42,7 +42,7 @@ var w = c.width = window.innerWidth,
 		hh = h / 2,
 		
 		opts = {
-			strings: [ 'HAPPY', 'BIRTHDAY', 'PARAS !' ],
+			strings: [ 'HAPPY', 'BIRTHDAY', 'SHIVAKSHI !' ],
 			charSize: 50,
 			charSpacing: 50,
 			lineHeight: 50,
